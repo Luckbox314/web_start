@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* This style applies to the big container that surrounds all your application */
+            padding: 20px; /* padding is a space inside the cointainer that sepparate it's content from it's border */
+            font-family: Arial, sans-serif; /* font-family is the font used in the text */
+            background-color: #f5f5f5; /* colors can be set with hex codes */
+        }
+
+        .cool-element {
+            background-color: darkblue; /* colors can also be set with names (not that used in production because it's limited, good for debuging tho) */
+            color: rgb(255, 255, 255); /* colors can also be set with rgb values */
+            width: 200px;
+            height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            padding-top: 5px; /* you can use paddint-{top, bottom, right, left} to indicate specific sides of the padding */
+            padding-bottom: 20px;
+        }
+
+        article {
+            background-color: white;
+            margin-top: 20px; /* margin is a space outside the container that sepparates it from other elements */
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 4px 5px 10px 1px grey;
+        }
+
+        section {
+            margin-top: 20px;
+            padding-left: 20px;
+            border-top: 2px solid lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Example Webpage</h1>
+        <p>This is an example web page without any styling. This was how the interent looked at first.</p>
+        <p>Quite dull no? well, that's why CSS was introduced, with that you can make pretier things.</p>
+    </div>
+    <div class="cool-element">
+        <p>Like this ~~~~</p>
+    </div>
+
+    <article>
+        <section>
+            <h2>Main components of webpages</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <h3>HTML</h3>
+            <p>HTML is the structure of the webpage. It is the skeleton of the webpage. It is the content of the webpage.</p>
+
+            <h3>CSS</h3>
+            <p>CSS is the style of the webpage. It is the skin of the webpage. It is the design of the webpage.</p>
+            <p>Go read the style tag of this page in the header to see how it's being styled.</p>
+
+            <h3>JavaScript</h3>
+            <p>JavaScript is the behavior of the webpage. It is the muscles of the webpage. It is the interactivity of the webpage.</p>
+        </section>
+    </article>
+    
+    <article>
+        <style>
+            /* is not common to use styles inside the body of the webpage but I'm doing it here to make the html code easier to understand at this simple leve.*/
+            .sandbox {
+                background-color: lightgrey;
+                padding: 10px;
+            }
+
+            .sandbox-flex {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            code {
+                color: #cd9622;
+                font-size: large;
+            }
+        </style>
+
+        <section>
+            <h2>HTML</h2>
+            <p> some important HTML components to know are:</p>
+            <ul>
+                <li><a href="#div-example">div</a></li>
+                <li><a href="#h-example">h1 / h2 / h3 / h4 / h5 / h6</a></li>
+                <li><a href="#p-example">p</a></li>
+                <li><a href="#ul-example">ul / ol / li</a></li>
+                <li><a href="#section-example">section</a></li>
+                <li><a href="#a-example">a</a></li>
+                <li><a href="#img-example">img</a></li>
+                <li><a href="#button-example">button</a></li>
+            </ul>
+
+            <section>
+                <style>
+                    #container-1 {
+                        background-color: red;
+                        color: white;
+                        padding: 10px;
+                    }
+
+                    #container-1 div {
+                        background-color: blue;
+                        padding: 5px;
+                        margin: 5px;
+                    }
+                </style>
+
+                <h3 id="div-example">div</h3>
+                <p><code>div</code> is a container that can hold other elements. It is used to group elements together.</p>
+
+                <div class="sandbox sandbox-flex">
+                    <div id="container-1">
+                        div
+                        <div>Sub div 1</div>
+                        <div>Sub div 2</div>
+                        <div>Sub div 3</div>
+                    </div>
+                </div>
+                <p>
+                    A really useful style for divs is the <code>display: flex;</code> propertie. It's a powerful tool for distributing elements inside.
+                    <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">Here</a> is a good tutorial that explains it's use with some examples.
+                </p>
+            </section>
+
+            <section>
+                <style>
+                    .overide-webkit-h1 {
+                        font-size: 2em; /* em is a different unit of measurement that is relative to the font-size of the parent element */
+                        margin-block-start: 0.67em;
+                        margin-block-end: 0.67em;
+                    }
+                </style>
+
+                <h3 id="h-example">h1 / h2 / h3 / h4 / h5 / h6</h3>
+                <p><code>h1</code> to <code>h6</code> are headers. They are used to indicate the importance of the text.</p>
+                <div class="sandbox">
+                    <h1 class="overide-webkit-h1">Header 1</h1> <!-- some browsers override the default styles of the headers, this is how you can override them -->
+                    <h2>Header 2</h2>
+                    <h3>Header 3</h3>
+                    <h4>Header 4</h4>
+                    <h5>Header 5</h5>
+                    <h6>Header 6</h6>  
+                </div>
+              
+            </section>
+
+            <section>
+                <h3 id="p-example">p</h3>
+                <p><code>p</code> is a paragraph. It is used to hold text.</p>
+                <div class="sandbox">
+                    <p>This is a paragraph.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 id="ul-example">ul / ol / li</h3>
+                <p><code>ul</code> is an unordered list. <code>ol</code> is an ordered list. <code>li</code> is a list item.</p>
+                <div class="sandbox">
+                    <p><b>Unordered list</b></p> <!-- b is a bold tag -->
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                    <p><b>Ordered list</b></p>
+                    <ol>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section>
+                <h3 id="section-example">section</h3>
+                <p>
+                    <code>section</code> is a container that can hold other elements.
+                    It's used for semantic purposes, a section should have a title and a paragraph inside it (although is not mandatory).
+                </p>
+                <div class="sandbox">
+                    <section>
+                        <h4>Section 1</h4>
+                        <p>This is section 1.</p>
+                    </section>
+                    <section>
+                        <h4>Section 2</h4>
+                        <p>This is section 2.</p>
+                    </section>
+                    <section>
+                        <h4>Section 3</h4>
+                        <p>This is section 3.</p>
+                    </section>
+                </div>
+            </section>
+
+            <section>
+                <h3 id="a-example">a</h3>
+                <p><code>a</code> is a link. "a" stands for anchor. It is used to link to other webpages.</p>
+                <div class="sandbox">
+                    <a href="https://www.google.com">Google</a>
+                </div>
+            </section>
+
+            <section>
+                <style>
+                    .sandbox img {
+                        height: 200px;
+                    }
+                </style>
+
+                <h3 id="img-example">img</h3>
+                <p><code>img</code> is an image. It is used to display images.</p>
+                <div class="sandbox sandbox-flex">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/TV_noise.jpg" alt="noise TV"> <!-- this is how you can use images from the web -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Red-blue-noise.gif" alt="visual snow">
+                    <img src="/lego man.jpg" alt="visual snow"> <!-- this is how you can use images from your own server -->
+                </div>
+                
+            </section>
+
+            <section>
+                <style>
+                    pre {
+                        background-color: rgb(56, 56, 56);
+                        padding: 20px;
+                        border-radius: 10px;
+                    }
+                </style>
+
+                <h3 id="button-example">button</h3>
+                <p><code>button</code> is a button. It is used to trigger actions, usually with javascript.</p>
+                <div class="sandbox">
+                    <button id="button-counter">Add +1</button>
+                    <p id="button-counter-example">0</p>
+                </div>
+
+                <p>Javascript code:</p>
+                <pre><code>
+// Select the button and paragraph elements
+const button = document.getElementById('button-counter');
+const counterDisplay = document.getElementById('button-counter-example');
+
+let counter = 0;
+
+button.addEventListener('click', () => {
+    counter++;
+    counterDisplay.textContent = counter;
+});
+                </code></pre>
+
+                <!-- This is how you can use javascript to make the button interactive -->
+                <script>
+                     // Select the button and paragraph elements
+                    const button = document.getElementById('button-counter');
+                    const counterDisplay = document.getElementById('button-counter-example');
+
+                    let counter = 0;
+
+                    button.addEventListener('click', () => {
+                        counter++;
+                        counterDisplay.textContent = counter;
+                    });
+                </script>
+
+
+            </section>
+        </section>
+    </article>
+</body>
+</html>
